@@ -1,0 +1,26 @@
+
+.categorias{
+
+}
+
+
+.item{
+ background-color: var(--primario-tres);
+}
+
+
+.categoria{
+    color:white;
+    padding: 8px;
+}
+
+.item ul{
+    list-style: none;
+
+    background-color: var(--primario-uno);
+
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding:8px;
+}

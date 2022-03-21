@@ -1,0 +1,17 @@
+
+.resultados{
+    /* background-color: red; */
+
+    margin: 32px 0;
+}
+
+.cajaResultado{
+    border: 2px solid var(--primario-tres);
+    border-radius: 8px;
+
+    padding: 16px;
+    margin: 16px 0;
+
+    display: flex;
+    flex-direction: row;
+}

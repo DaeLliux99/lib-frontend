@@ -1,0 +1,66 @@
+.header{
+    background-color: var(--primario-uno);
+
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.izquierda{
+    
+}
+
+.derecha{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer{
+    display: flex;
+    justify-content: flex-end;
+
+    padding:16px;
+}
+
+.loginContainer button{
+    margin: 2px 8px;
+
+    border:none;
+    padding: 8px;
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.navegacion{
+    
+}
+
+.navegacion ul{
+    display:flex;
+    flex-direction: row;
+
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.navegacion ul li{
+
+    margin:0 16px;
+    padding:8px;
+    list-style: none;
+
+    font-weight: bold;
+
+    border-bottom: 4px solid var(--primario-tres);
+    cursor:pointer;
+
+    transition: 0.5s;
+
+}
+
+.navegacion ul li:hover{
+    border-bottom: 4px solid white;
+}

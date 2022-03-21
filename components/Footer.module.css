@@ -1,0 +1,8 @@
+
+.footer{
+    background-color: var(--secundario);
+
+    color:white;
+
+    padding: 16px 32px;
+}
