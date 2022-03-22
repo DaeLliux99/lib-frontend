@@ -1,19 +1,23 @@
 import styles from './Resultados.module.css'
+import Link from 'next/link'
 
-const CajaResultado = () => {
+const CajaResultado = ({value}) => {
     return ( 
+        <Link href="/documento">
         <div className={styles.cajaResultado}>
-            <div>LOGO DE LA MATERIA</div>
-            <div>
-                <p>TITULO</p>
-                <div>
-                    <span>MATERIA</span>
-                    <span>ORGANIZACIÓN</span>
+            <div>LOGO</div>
+            <div  className={styles.datos}>
+                <p  className={styles.titulo}>{value.tema}</p>
+                <div  className={styles.etiquetas}>
+                    <span className={styles.materia}>Matemática</span>
+                    <span className={styles.organizacion}>Ministerio de Educación</span>
                 </div>
-                <p>resumen</p>
-                <p>año</p>
+                <p  className={styles.resumen}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae facere maxime harum. 
+                    Sunt ex quas maiores deserunt debitis voluptates commodi ad quaerat, praesentium magnam pariatur eos aut ipsam ut fugiat.</p>
+                <p className={styles.anho}>2018</p>
             </div>
         </div>
+        </Link>
      );
 }
  

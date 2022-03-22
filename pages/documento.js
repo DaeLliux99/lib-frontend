@@ -12,7 +12,7 @@ const bandera = true;
 const Home = () => (
   <div className="home">
     <Header/>
-    { bandera ?  <PanelPrincipal/> : <PanelDocumento/>}
+        <PanelDocumento/>
     <Footer/>
   </div>
 );

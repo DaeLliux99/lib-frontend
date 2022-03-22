@@ -3,7 +3,7 @@ import styles from './Busqueda.module.css'
 const Busqueda = () => {
     return ( 
         <div className={styles.busqueda}>
-            <div className={styles.titulo}>(168) Factorización</div>
+            <div className={styles.titulo}>(2) Ruffini</div>
             <form >
                 <div className={styles.campo}>
                     <p>Buscar</p>

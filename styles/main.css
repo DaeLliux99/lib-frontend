@@ -11,9 +11,14 @@
   --primario-tres: rgb(0, 34, 69);
   --secundario: rgb(59, 59, 59);
 
+  --titulo: 24px;
+  --subtitulo: 18px;
+
   font-family: Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 button{
   cursor: pointer;
+  border:none;
 }
