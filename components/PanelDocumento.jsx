@@ -1,6 +1,11 @@
 import styles from './PanelDocumento.module.css'
+import Image from 'next/image'
+import { useState } from 'react';
 
 const PanelDocumento = () => {
+
+    const [esFavorito, setEsFavorito] = useState(false)
+
     return ( 
         <main className={styles.main}>
             <p>...</p>
@@ -25,7 +30,12 @@ const PanelDocumento = () => {
                 </div>
 
                 <div className={styles.derecha}>
-                    <div className={styles.tituloDocumento}>Ruffini</div>
+                    <div className={styles.seccionTitulo}>
+                        <span className={styles.tituloDocumento}>Ruffini</span>
+                        <span className={styles.favorito}>
+                            <Image className={styles.favoritoLogo} src={ esFavorito ? '/images/favorito.png' : '/images/no-favorito.png'} alt='Logo' width='24px' height='24px' onClick={()=>setEsFavorito(!esFavorito)}/>
+                        </span>
+                    </div>
                     <hr />
                     <div className={styles.contenidoDocumento}>
                         <div className={styles.materia}>

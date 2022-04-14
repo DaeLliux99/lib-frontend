@@ -22,6 +22,12 @@
     width: 50%;
 }
 
+.seccionTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .descarga button{
     padding: 8px;
     border-radius: 2px;
@@ -129,4 +135,16 @@
 .seccionInformacion td{
     padding: 2px 6px;
     border: 1px solid gray;
+}
+
+
+/* ********************* */
+.favorito{
+    display: inline;
+    margin:0 12px;
+}
+
+.favoritoLogo{
+    cursor:pointer;
+    display: inline;
 }

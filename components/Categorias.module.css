@@ -1,18 +1,30 @@
 
 .categorias{
-
+    width: 140px;
 }
 
 
 .item{
  background-color: var(--primario-tres);
+ border: 1px solid white;
 }
 
 
 .categoria{
     color:white;
     padding: 8px;
+    cursor:pointer;
 }
+
+.item .subCategorias{
+    display:none;
+} 
+
+
+
+.item:hover > .item .subCategorias{
+    display:block;
+} 
 
 .item ul{
     list-style: none;
@@ -23,4 +35,8 @@
     flex-direction: column;
     margin:0;
     padding:8px;
+}
+
+.item ul li{
+    cursor:pointer;
 }

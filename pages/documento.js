@@ -11,9 +11,9 @@ const bandera = true;
 
 const Home = () => (
   <div className="home">
-    <Header/>
+      <Header/>
         <PanelDocumento/>
-    <Footer/>
+      <Footer/>
   </div>
 );
 

@@ -1,31 +1,52 @@
+import { useState, useEffect } from 'react'
 import styles from './Categorias.module.css'
-//import right from './images/right.png'
+import axios from 'axios'
+
+const url = 'https://edu-repo.azurewebsites.net'
 
 const Categorias = () => {
+
+    const [materias, setMaterias] = useState([])
+    const [loader, setLoader] = useState(false)
+
+    const [mostrarItemNivel, setMostrarItemNivel] = useState(false)
+    const [mostrarItemMaterias, setMostrarItemMaterias] = useState(false)
+    const [mostrarItemEtiquetas, setMostrarItemEtiquetas] = useState(false)
+
+    useEffect(() => {
+        getMaterias()
+    }, [])
+    
+    const getMaterias = async() => {
+        await axios.get(url+'/api/materias')
+            .then(datos => {
+                setMaterias(datos.data)
+                setLoader(true)
+                console.log(datos)
+            })
+            .catch(e=> console.log(e))
+    }
+
     return ( 
         <div className={styles.categorias}>
             <div className={styles.item}>
-                <div className={styles.categoria}>
-                    <p className={styles.categoria}>NIVEL</p>
-                    {/* <img src={right} alt="categoria" /> */}
+                <div>
+                    <p className={styles.categoria} onClick={() => setMostrarItemNivel(!mostrarItemNivel) }>NIVEL</p>
                 </div>
-                <ul clasname={styles.subCategorias}>
+                <ul className={styles.subCategorias } style={{display:`${mostrarItemNivel ? 'block' : 'none'}`}}>
                     <li>Primaria</li>
                     <li>Secundaria</li>
                 </ul>
             </div>
             <div className={styles.item}>
-                <p className={styles.categoria}>MATERIAS</p>
-                <ul clasname={styles.subCategorias}>
-                    <li>Matemáticas</li>
-                    <li>Comunicación</li>
-                    <li>Ciencias</li>
-                    <li>Historia</li>
+                <p className={styles.categoria} onClick={() => setMostrarItemMaterias(!mostrarItemMaterias) }>MATERIAS</p>
+                <ul className={styles.subCategorias} style={{display:`${mostrarItemMaterias ? 'block' : 'none'}`}}>
+                    {materias ? materias.map((el,index) => (<li className={styles.liMaterias} key={index}>{el.nombre}</li>)): <div>Cargando ... </div>}
                 </ul>
             </div>
             <div className={styles.item}>
-                <p className={styles.categoria}>ETIQUETAS</p>
-                <ul clasname={styles.subCategorias}>
+                <p className={styles.categoria} onClick={() => setMostrarItemEtiquetas(!mostrarItemEtiquetas) }>ETIQUETAS</p>
+                <ul className={styles.subCategorias} style={{display:`${mostrarItemEtiquetas ? 'block' : 'none'}`}}>
                     <li>Corrupción</li>
                     <li>Responsabilidad</li>
                     <li>Reglas</li>

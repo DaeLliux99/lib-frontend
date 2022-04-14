@@ -1,13 +1,21 @@
 import styles from './Header.module.css'
+import Link from 'next/link'
 
 const Header = () => {
+    
     return ( 
         <header className={styles.header}>
-            <div className={styles.izquierda} >REPOFisi</div>
+            <Link href='/'>
+                <div className={styles.izquierda} >REPOFisi</div>
+            </Link>
             <div className={styles.derecha} >
                 <div className={styles.loginContainer}>
-                    <button>INICIAR SESIÓN</button>
-                    <button>REGISTRARSE</button>
+                    <Link href='/login'>
+                        <button>INICIAR SESIÓN</button>
+                    </Link>
+                    <Link  href='/signup'>
+                        <button>REGISTRARSE</button>
+                    </Link>                    
                 </div>
                 <div className={styles.navegacion}>
                     <ul>
@@ -20,5 +28,5 @@ const Header = () => {
         </header>
      );
 }
- 
+
 export default Header;

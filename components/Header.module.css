@@ -8,7 +8,13 @@
 }
 
 .izquierda{
-    
+    font-size: 64px;
+    color: var(--primario-dos);
+
+    padding-right: 16px;
+    border-right: 6px solid white;
+
+    cursor:pointer;
 }
 
 .derecha{
@@ -25,12 +31,17 @@
 
 .loginContainer button{
     margin: 2px 8px;
-
     border:none;
     padding: 8px;
     border-radius: 8px;
+    font-weight: 500;
 
-    font-weight: bold;
+    transition: 0.5s;
+}
+
+.loginContainer button:hover{
+    background-color: var(--primario-dos);
+    color: white;
 }
 
 .navegacion{
