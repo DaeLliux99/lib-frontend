@@ -3,7 +3,7 @@ import Categorias from './Categorias';
 import styles from './styles/PanelPrincipal.module.css'
 import Resultados from './Resultados';
 
-const PanelPrincipal = () => {
+const PanelPrincipal = ({ articulos }) => {
   return (
     <main className={styles.main}>
       <div className={styles.izquierda}>
@@ -11,7 +11,7 @@ const PanelPrincipal = () => {
       </div>
       <div className={styles.derecha}>
         <Busqueda />
-        <Resultados />
+        <Resultados articulos = { articulos }/>
       </div>
     </main>
   );

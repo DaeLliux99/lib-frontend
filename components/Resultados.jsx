@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const url = 'https://edu-repo.azurewebsites.net'
 
-const Resultados = () => {
+const Resultados = ({ articulos }) => {
   const [loader, setLoader] = useState(false);
   const [results, setResults] = useState([]);
 
@@ -28,8 +28,8 @@ const Resultados = () => {
       <p>RESULTADOS</p>
 
       {loader ? (
-        results.map((e) => {
-          console.log(e);
+        articulos.map((e) => {
+          //console.log(e);
           return <CajaResultado key={e.idArticulo} value={e} />;
         })
       ) : (
