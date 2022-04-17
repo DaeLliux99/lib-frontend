@@ -9,16 +9,6 @@ const thisUserValues = {
     esPublicador: false
 }
 
-const thisNewUserValues = {
-    nombres:'',
-    apellidos:'',
-    correo:'',
-    edad:'',
-    username : '',
-    password : '',
-    esPublicador: false
-}
-
 const urlBase = "https://edu-repo.azurewebsites.net";
 
 const PanelLogin = () => {

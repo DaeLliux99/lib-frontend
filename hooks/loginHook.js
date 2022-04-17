@@ -11,14 +11,11 @@ export const useLogin = (usuarioParam) => {
 	//const cookies = new Cookies();
 
 	const logUser = async () => {
+    console.log(usuarioParam);
     await axios
       .post(`${url}/api/login`, usuarioParam)
       .then((res) => {
         const { data } = res;
-        /*cookies.set("nombres", data.nombres);
-        cookies.set("token", data.token);
-        cookies.set("esPub", data.esPub);
-        cookies.set("correo", data.correo);*/
         window.localStorage.setItem('loggedUser', JSON.stringify(data));
         setLoggeado(true);
       })
@@ -39,13 +36,13 @@ export const useSignUp = (usuarioParam) => {
   const [user, setUser] = useState({
     correo: '',
     contraseña: '',
-    esPublicador: ''
+    esPublicador: false
   });
   const { logUser, loggeado } = useLogin(user);
   const [ guardado, setGuardado ] = useState(false);
 
-	const signupUser = async () => {
-    await axios
+	const signupUser = () => {
+    axios
       .post(`${url}/api/usuarios/add`, usuarioParam)
       .then((res) => {
         const { data } = res;
@@ -75,10 +72,16 @@ export const useSignUp = (usuarioParam) => {
 export const useAuth = () => {
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState({
-    correo: '',
-    contraseña: '',
-    esPub: false
+    correo: "",
+    contraseña: "",
+    esPub: false,
   });
+  const handleLogout = () => {
+    window.localStorage.removeItem("loggedUser");
+    setUser(null);
+    setAuth(false);
+  };
+
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
@@ -86,12 +89,6 @@ export const useAuth = () => {
       setAuth(true);
     }
   }, [auth]);
-
-  const handleLogout = () => {
-    setAuth(false);
-    setUser(null);
-    window.localStorage.removeItem("loggedUser");
-  };
 
   return { user, auth, handleLogout }
 };

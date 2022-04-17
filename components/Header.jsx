@@ -31,7 +31,7 @@ const Header = () => {
         <div className={styles.navegacion}>
           <ul>
             <li>PANEL PRINCIPAL</li>
-            {user.esPub ? <li>MIS ARTICULOS</li> : <li>MIS FAVORITOS</li>}
+            {auth && (user.esPub ? <li>MIS ARTICULOS</li> : <li>MIS FAVORITOS</li>)}
             <li>ORGANIZACIONES</li>
           </ul>
         </div>
