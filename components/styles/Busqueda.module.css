@@ -1,0 +1,50 @@
+
+.busqueda{
+    padding: 16px 16px;
+
+    border-bottom:2px solid var(--primario-dos);
+}
+
+.titulo{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.busqueda form{
+    display: flex;
+    flex-direction: row;
+}
+
+.campo{
+    font-size: 16px;
+    margin: 4px;
+}
+
+.campo p{
+    padding: 4px;
+}
+
+.campo input{
+    border: 1px solid gray;
+    font-size:16px;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.campo button.btnConsultar{
+    border:none;
+    border-radius: 4px;
+    padding: 8px;
+    color:white;
+    background-color: var(--primario-tres);
+}
+
+.campo .campoBotones button{
+    margin-right: 8px;
+
+    border:none;
+    border-radius: 4px;
+    padding: 8px;
+    color:white;
+    background-color: var(--primario-dos);
+}
