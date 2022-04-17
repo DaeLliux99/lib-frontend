@@ -1,4 +1,4 @@
-import styles from './Busqueda.module.css'
+import styles from './styles/Busqueda.module.css'
 import { useState } from 'react';
 
 const Busqueda = () => {

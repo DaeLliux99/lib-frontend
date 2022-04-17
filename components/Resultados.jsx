@@ -1,4 +1,4 @@
-import styles from './Resultados.module.css'
+import styles from './styles/Resultados.module.css'
 import CajaResultado from './CajaResultado';
 import { useState, useEffect } from 'react';
 import axios from 'axios';

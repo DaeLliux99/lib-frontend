@@ -1,6 +1,6 @@
 import Busqueda from './Busqueda';
 import Categorias from './Categorias';
-import styles from './PanelPrincipal.module.css'
+import styles from './styles/PanelPrincipal.module.css'
 import Resultados from './Resultados';
 
 const PanelPrincipal = () => {

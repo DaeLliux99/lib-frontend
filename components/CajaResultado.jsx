@@ -1,4 +1,4 @@
-import styles from './Resultados.module.css'
+import styles from './styles/Resultados.module.css'
 import Link from 'next/link'
 
 const CajaResultado = ({value}) => {

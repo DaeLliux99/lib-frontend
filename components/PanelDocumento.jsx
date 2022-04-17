@@ -1,4 +1,4 @@
-import styles from './PanelDocumento.module.css'
+import styles from './styles/PanelDocumento.module.css'
 import Image from 'next/image'
 import { useState } from 'react';
 

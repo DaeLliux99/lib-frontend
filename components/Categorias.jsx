@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styles from './Categorias.module.css'
+import styles from './styles/Categorias.module.css'
 import axios from 'axios'
 
 const url = 'https://edu-repo.azurewebsites.net'

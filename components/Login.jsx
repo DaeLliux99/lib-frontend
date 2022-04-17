@@ -1,4 +1,4 @@
-import styles from './Login.module.css'
+import styles from './styles/Login.module.css'
 
 import HeaderLogin from './HeaderLogin';
 import PanelLogin from './PanelLogin';
