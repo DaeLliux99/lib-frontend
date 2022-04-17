@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const CajaResultado = ({value}) => {
     return ( 
-        <Link href="/documento">
+        <Link href={`/documento/${value.idArticulo}`}>
         <div className={styles.cajaResultado}>
             <div>LOGO</div>
             <div  className={styles.datos}>

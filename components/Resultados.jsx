@@ -27,7 +27,10 @@ const Resultados = () => {
         <div className={styles.resultados}>
             <p>RESULTADOS</p>
 
-            { loader ? results.map((e,idx) => (<CajaResultado key={idx} value={e}/>)) : <div>Cargando...</div>}
+            { loader ? results.map((e) => {
+                console.log(e);
+                return (<CajaResultado key={e.idArticulo} value={e}/>)
+            }) : <div>Cargando...</div>}
         </div>
      );
 }
