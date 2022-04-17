@@ -37,7 +37,7 @@ const Busqueda = () => {
             </div>
           </div>
           <div className={styles.campo}>
-            <Link href={`?tema=${busqueda}`}>
+            <Link href={`filtro?tema=${busqueda}`}>
               <button type="submit" className={styles.btnConsultar}>
                 CONSULTAR
               </button>

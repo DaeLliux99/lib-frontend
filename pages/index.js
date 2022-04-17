@@ -11,15 +11,9 @@ const Home = ({ articulos }) => (
   </div>
 );
 
-export const getServerSideProps = async (context) => {
-  //console.log(context.query.tema);
-  const tema = context.query.tema;
-  let filtro = "";
-  if (tema) {
-    filtro = `/filtro/${tema}`;
-  }
+export const getServerSideProps = async () => {
   const { data } = await axios.get(
-    `https://edu-repo.azurewebsites.net/api/articulos${filtro}`
+    `https://edu-repo.azurewebsites.net/api/articulos`
   );
   //console.log(data);
   return {
