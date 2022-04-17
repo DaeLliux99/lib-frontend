@@ -28,4 +28,31 @@ const useObtenerArticulo = (idArticulo) => {
   return {articulo, cargando};
 }
 
+export const useGetArticuloFiltro = ( filtro ) => {
+	const url = "https://edu-repo.azurewebsites.net"
+	const [articulos, setArticulos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+	const obtenerArticulos = () => {
+    axios
+      .get(`${url}/api/articulos/filtro/${filtro}`)
+      .then((res) => {
+        console.log("Paso por aqui");
+        setArticulos(res.data);
+        setCargando(false);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log("Estoy en error");
+        console.error(err);
+      });
+  };
+	useEffect(() => {
+    if (filtro !== undefined) {
+      obtenerArticulos();
+    }
+  }, [filtro]);
+
+  return {articulos, cargando};
+}
+
 export default useObtenerArticulo;

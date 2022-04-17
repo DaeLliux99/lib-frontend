@@ -1,15 +1,12 @@
 import Header from '../components/Header';
 import PanelPrincipal from '../components/PanelPrincipal';
 import Footer from '../components/Footer';
-import PanelDocumento from '../components/PanelDocumento';
-
-const bandera = true;
 
 const Home = () => (
   <div className="home">
-      <Header/>
-      { bandera ?  <PanelPrincipal/> : <PanelDocumento/>}
-      <Footer/>
+    <Header />
+    <PanelPrincipal />
+    <Footer />
   </div>
 );
 

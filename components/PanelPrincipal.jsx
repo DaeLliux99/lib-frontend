@@ -4,17 +4,17 @@ import styles from './styles/PanelPrincipal.module.css'
 import Resultados from './Resultados';
 
 const PanelPrincipal = () => {
-    return ( 
-        <main className={styles.main}>
-            <div className={styles.izquierda}>
-                <Categorias/>
-            </div>
-            <div className={styles.derecha}>
-                <Busqueda/>
-                <Resultados/>
-            </div>
-        </main>
-     );
-}
+  return (
+    <main className={styles.main}>
+      <div className={styles.izquierda}>
+        <Categorias />
+      </div>
+      <div className={styles.derecha}>
+        <Busqueda />
+        <Resultados />
+      </div>
+    </main>
+  );
+};
  
 export default PanelPrincipal;
