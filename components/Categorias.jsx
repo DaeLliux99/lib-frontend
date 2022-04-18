@@ -2,8 +2,16 @@ import { useState, useEffect } from 'react'
 import styles from './styles/Categorias.module.css'
 import axios from 'axios'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const url = 'https://edu-repo.azurewebsites.net'
+const imagenesSegunIdMateria = {
+  1:'materia-matematica.png',
+  2:'materia-historia.png',
+  3:'materia-lenguaje.png',
+  4:'materia-quimica.png',
+  5:'materia-fisica.png',
+}
 
 const Categorias = () => {
   const [materias, setMaterias] = useState([]);
@@ -31,13 +39,19 @@ const Categorias = () => {
   return (
     <div className={styles.categorias}>
       <div className={styles.item}>
-        <div>
-          <p
-            className={styles.categoria}
-            onClick={() => setMostrarItemNivel(!mostrarItemNivel)}
-          >
-            NIVEL
-          </p>
+        <div             
+          className={styles.categoria}
+          onClick={() => setMostrarItemNivel(!mostrarItemNivel)}>
+          <span>NIVEL</span>
+          <span>
+            <Image 
+              // src="/images/logorepofisi.png"
+              src='/images/right.png'
+              alt="Logo"
+              width="16px"
+              height="16px"
+            />
+          </span>
         </div>
         <ul
           className={styles.subCategorias}
@@ -48,21 +62,38 @@ const Categorias = () => {
         </ul>
       </div>
       <div className={styles.item}>
-        <p
+        <div             
           className={styles.categoria}
-          onClick={() => setMostrarItemMaterias(!mostrarItemMaterias)}
-        >
-          MATERIAS
-        </p>
+          onClick={() => setMostrarItemMaterias(!mostrarItemMaterias)}>
+          <span>MATERIAS</span>
+          <span>
+            <Image 
+              // src="/images/logorepofisi.png"
+              src='/images/right.png'
+              alt="Logo"
+              width="16px"
+              height="16px"
+            />
+          </span>
+        </div>        
         <ul
           className={styles.subCategorias}
           style={{ display: `${mostrarItemMaterias ? "block" : "none"}` }}
         >
           {materias ? (
             materias.map((el, index) => (
-              <Link href={`?materia=${el.idMateria}`}>
+              <Link href={`?materia=${el.idMateria}`} key={index}>
                 <li className={styles.liMaterias} key={index}>
-                  {el.nombre}
+                <span>{el.nombre}</span>
+                <span>
+                  <Image 
+                    // src="/images/logorepofisi.png"
+                    src={`/images/${imagenesSegunIdMateria[el.idMateria]}`}
+                    alt="Logo"
+                    width="24px"
+                    height="24px"
+                  />
+                </span>
                 </li>
               </Link>
             ))
@@ -71,13 +102,21 @@ const Categorias = () => {
           )}
         </ul>
       </div>
-      <div className={styles.item}>
-        <p
+      {/* <div className={styles.item}>
+        <div             
           className={styles.categoria}
-          onClick={() => setMostrarItemEtiquetas(!mostrarItemEtiquetas)}
-        >
-          ETIQUETAS
-        </p>
+          onClick={() => setMostrarItemEtiquetas(!mostrarItemEtiquetas)}>
+          <span>ETIQUETAS</span>
+          <span>
+            <Image 
+              // src="/images/logorepofisi.png"
+              src='/images/right.png'
+              alt="Logo"
+              width="16px"
+              height="16px"
+            />
+          </span>
+        </div>   
         <ul
           className={styles.subCategorias}
           style={{ display: `${mostrarItemEtiquetas ? "block" : "none"}` }}
@@ -86,7 +125,7 @@ const Categorias = () => {
           <li>Responsabilidad</li>
           <li>Reglas</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Header = () => {
         {auth ? (
           <>
             <div className={styles.loginContainer}>
-              <span>Bienvenido {user.nombres}</span>
+              <span className={styles.username}>Bienvenido {user.nombres}</span>
               <button onClick={handleLogout}>CERRAR SESION</button>
             </div>
           </>
