@@ -16,11 +16,9 @@ const Busqueda = () => {
     return (
       <div className={styles.busqueda}>
         <div className={styles.titulo}>
-          {busqueda ? tituloBusqueda : "Todos los resultados"}
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.campo}>
-            <p>Buscar</p>
             <input
               type="text"
               placeholder="Inserte texto"
