@@ -2,19 +2,27 @@ import styles from './styles/Header.module.css'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { useAuth } from '../hooks/loginHook';
+import Image from 'next/image'
 
 const Header = () => {
   const { user, auth, handleLogout } = useAuth();
   return (
     <header className={styles.header}>
       <Link href="/">
-        <div className={styles.izquierda}>REPOFisi</div>
+        <div className={styles.izquierda}>
+          <Image
+            src="/images/logorepofisi.png"
+            alt="Logo"
+            width="200px"
+            height="60px"
+          />
+        </div>
       </Link>
       <div className={styles.derecha}>
         {auth ? (
           <>
-            <div>Bienvenido {user.nombres}</div>
             <div className={styles.loginContainer}>
+              <span>Bienvenido {user.nombres}</span>
               <button onClick={handleLogout}>CERRAR SESION</button>
             </div>
           </>

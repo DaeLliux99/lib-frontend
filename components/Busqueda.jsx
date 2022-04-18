@@ -30,15 +30,8 @@ const Busqueda = () => {
             />
           </div>
           <div className={styles.campo}>
-            <p>Ordenar Por</p>
-            <div className={styles.campoBotones}>
-              <button>ASC</button>
-              <button>DESC</button>
-            </div>
-          </div>
-          <div className={styles.campo}>
             <Link href={`?tema=${busqueda}`}>
-              <button type="submit" className={styles.btnConsultar}>
+              <button type="submit" className={styles.btnConsultar} >
                 CONSULTAR
               </button>
             </Link>

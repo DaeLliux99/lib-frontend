@@ -8,8 +8,9 @@
 }
 
 .izquierda{
-    font-size: 64px;
-    color: var(--primario-dos);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     padding-right: 16px;
     border-right: 6px solid white;
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: flex-end;
 
-    padding:16px;
+    padding:8px;
 }
 
 .loginContainer button{
