@@ -32,86 +32,77 @@ const PanelSignUp = () => {
   return (
     <main className={styles.main}>
       <form action="">
-          <p style={tituloStyle}>REGISTRE SUS DATOS</p>
-          <div className={styles.divInsideForm}>
-            <div className={styles.label}>
-              <span>NOMBRES</span>
-              <input
-                name="nombres"
-                className={styles.input}
-                type="text"
-                value={newUserValues.nombres}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.label}>
-              <span>APELLIDOS</span>
-              <input
-                name="apellidos"
-                className={styles.input}
-                type="text"
-                value={newUserValues.apellidos}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.label}>
-              <span>EDAD</span>
-              <input
-                name="edad"
-                className={styles.input}
-                type="text"
-                value={newUserValues.edad}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.label}>
-              <span>CORREO</span>
-              <input
-                name="correo"
-                className={styles.input}
-                type="email"
-                value={newUserValues.correo}
-                onChange={handleChange}
-              />
-            </div>
-            <div className={styles.label}>
-              <span>CONTRASEÑA</span>
-              <input
-                name="contraseña"
-                className={styles.input}
-                type="password"
-                value={newUserValues.contraseña}
-                onChange={handleChange}
-              />
-            </div>
-            {/*<div>
-              <input
-                name="esPublicador"
-                type="checkbox"
-                value="esPublicador"
-                onChange={handleCheckbox}
-              />
-              ¿Es Publicador?
-            </div>*/}
+        <p style={tituloStyle}>REGISTRE SUS DATOS</p>
+        <div className={styles.divInsideForm}>
+          <div className={styles.label}>
+            <span>NOMBRES</span>
+            <input
+              name="nombres"
+              className={styles.input}
+              type="text"
+              value={newUserValues.nombres}
+              onChange={handleChange}
+            />
           </div>
           <div className={styles.label}>
-            {/* <Link href='/'> */}
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                signupUser();
-              }}
-            >
-              REGISTRAR
-            </button>
-            {/* </Link> */}
+            <span>APELLIDOS</span>
+            <input
+              name="apellidos"
+              className={styles.input}
+              type="text"
+              value={newUserValues.apellidos}
+              onChange={handleChange}
+            />
           </div>
-          <div className={styles.footer}>
-            <p>¿Ya tienes una cuenta?</p>
-            <Link href="/login">
-              <a href="">Iniciar Sesión</a>
-            </Link>
+          <div className={styles.label}>
+            <span>EDAD</span>
+            <input
+              name="edad"
+              className={styles.input}
+              type="text"
+              value={newUserValues.edad}
+              onChange={handleChange}
+            />
           </div>
+          <div className={styles.label}>
+            <span>CORREO</span>
+            <input
+              name="correo"
+              className={styles.input}
+              type="email"
+              value={newUserValues.correo}
+              onChange={handleChange}
+            />
+          </div>
+          <div className={styles.label}>
+            <span>CONTRASEÑA</span>
+            <input
+              name="contraseña"
+              className={styles.input}
+              type="password"
+              value={newUserValues.contraseña}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className={styles.label}>
+          {/* <Link href='/'> */}
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              signupUser();
+            }}
+          >
+            REGISTRAR
+          </button>
+          {/* </Link> */}
+        </div>
+        <div className={styles.footer}>
+          <p>¿Ya tienes una cuenta?</p>
+          <Link href="/login">
+            <a href="">Iniciar Sesión</a>
+          </Link>
+        </div>
       </form>
     </main>
   );

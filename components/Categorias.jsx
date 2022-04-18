@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './styles/Categorias.module.css'
 import axios from 'axios'
+import Link from 'next/link'
 
 const url = 'https://edu-repo.azurewebsites.net'
 
@@ -59,9 +60,11 @@ const Categorias = () => {
         >
           {materias ? (
             materias.map((el, index) => (
-              <li className={styles.liMaterias} key={index}>
-                {el.nombre}
-              </li>
+              <Link href={`?materia=${el.idMateria}`}>
+                <li className={styles.liMaterias} key={index}>
+                  {el.nombre}
+                </li>
+              </Link>
             ))
           ) : (
             <div>Cargando ... </div>
