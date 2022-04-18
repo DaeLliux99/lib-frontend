@@ -38,9 +38,22 @@ const Header = () => {
         )}
         <div className={styles.navegacion}>
           <ul>
-            <li>PANEL PRINCIPAL</li>
-            {auth && (user.esPub ? <li>MIS ARTICULOS</li> : <li>MIS FAVORITOS</li>)}
-            <li>ORGANIZACIONES</li>
+            <Link href="/">
+              <li>PANEL PRINCIPAL</li>
+            </Link>
+            {auth &&
+              (user.esPub ? (
+                <Link href="/">
+                  <li>MIS ARTICULOS</li>{" "}
+                </Link>
+              ) : (
+                <Link href="/">
+                  <li>MIS FAVORITOS</li>
+                </Link>
+              ))}
+            <Link href="/">
+              <li>ORGANIZACIONES</li>
+            </Link>
           </ul>
         </div>
       </div>

@@ -36,7 +36,8 @@ export const useGetFavorito = (idArticulo, token) => {
 
 export const useGetFavoritos = ( token ) => {
 	const url = "https://edu-repo.azurewebsites.net"
-	const [favoritos, setFavoritos] = useState([]);
+	const [favoritos, setFavoritos] = useState(null);
+  const [articulos, setArticulos] = useState(null);
   const [cargando, setCargando] = useState(true);
   const config = {
     headers: {
@@ -58,12 +59,18 @@ export const useGetFavoritos = ( token ) => {
       });
   };
 	useEffect(() => {
-    if (usuario !== undefined) {
+    if (token !== undefined) {
       getFavoritos();
     }
   }, [token]);
+  useEffect(() => {
+    if (favoritos) {
+      setArticulos(favoritos.map((fav) => fav.articulo));
+      console.log(favoritos);
+    }
+  }, [favoritos]);
 
-  return {favoritos, cargando};
+  return {favoritos, articulos, cargando};
 }
 
 export const useAddFavorito = (idArticulo, token) => {
