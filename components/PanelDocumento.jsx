@@ -1,10 +1,25 @@
 import styles from './styles/PanelDocumento.module.css'
 import Image from 'next/image'
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { useAuth } from '../hooks/loginHook'
+import {
+  useGetFavorito,
+  useAddFavorito,
+  useDeleteFavorito,
+} from "../hooks/favoritosHooks";
 const PanelDocumento = ({ articulo }) => {
   const [esFavorito, setEsFavorito] = useState(false);
-  //console.log(value);
+  const { user, auth } = useAuth();
+  const { favorito, cargando } = useGetFavorito(articulo.idArticulo, user.token);
+  const { addFavorito } = useAddFavorito(articulo.idArticulo, user.token);
+  const { deleteFavorito } = useDeleteFavorito(articulo.idArticulo, user.token);
+
+  useEffect(() => {
+    if (favorito) {
+      setEsFavorito(true);
+    } 
+  }, [favorito]);
+  console.log(user);
   return (
     <main className={styles.main}>
       <p>...</p>
@@ -41,7 +56,11 @@ const PanelDocumento = ({ articulo }) => {
                 alt="Logo"
                 width="24px"
                 height="24px"
-                onClick={() => setEsFavorito(!esFavorito)}
+                onClick={
+                  esFavorito
+                    ? (() => {deleteFavorito(); setEsFavorito(null)})
+                    : (() => {addFavorito(); setEsFavorito({})})
+                }
               />
             </span>
           </div>
