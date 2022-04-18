@@ -39,14 +39,15 @@ const Categorias = () => {
   return (
     <div className={styles.categorias}>
       <div className={styles.item}>
-        <div             
+        <div
           className={styles.categoria}
-          onClick={() => setMostrarItemNivel(!mostrarItemNivel)}>
+          onClick={() => setMostrarItemNivel(!mostrarItemNivel)}
+        >
           <span>NIVEL</span>
           <span>
-            <Image 
+            <Image
               // src="/images/logorepofisi.png"
-              src='/images/right.png'
+              src="/images/right.png"
               alt="Logo"
               width="16px"
               height="16px"
@@ -57,25 +58,30 @@ const Categorias = () => {
           className={styles.subCategorias}
           style={{ display: `${mostrarItemNivel ? "block" : "none"}` }}
         >
-          <li href={`?nivel=Primaria`}>Primaria</li>
-          <li href={`?nivel=Secundaria`}>Secundaria</li>
+          <Link href={`?nivel=Primaria`}>
+            <li>Primaria</li>
+          </Link>
+          <Link href={`?nivel=Secundaria`}>
+            <li>Secundaria</li>
+          </Link>
         </ul>
       </div>
       <div className={styles.item}>
-        <div             
+        <div
           className={styles.categoria}
-          onClick={() => setMostrarItemMaterias(!mostrarItemMaterias)}>
+          onClick={() => setMostrarItemMaterias(!mostrarItemMaterias)}
+        >
           <span>MATERIAS</span>
           <span>
-            <Image 
+            <Image
               // src="/images/logorepofisi.png"
-              src='/images/right.png'
+              src="/images/right.png"
               alt="Logo"
               width="16px"
               height="16px"
             />
           </span>
-        </div>        
+        </div>
         <ul
           className={styles.subCategorias}
           style={{ display: `${mostrarItemMaterias ? "block" : "none"}` }}
@@ -84,16 +90,16 @@ const Categorias = () => {
             materias.map((el, index) => (
               <Link href={`?materia=${el.idMateria}`} key={index}>
                 <li className={styles.liMaterias} key={index}>
-                <span>{el.nombre}</span>
-                <span>
-                  <Image 
-                    // src="/images/logorepofisi.png"
-                    src={`/images/${imagenesSegunIdMateria[el.idMateria]}`}
-                    alt="Logo"
-                    width="24px"
-                    height="24px"
-                  />
-                </span>
+                  <span>{el.nombre}</span>
+                  <span>
+                    <Image
+                      // src="/images/logorepofisi.png"
+                      src={`/images/${imagenesSegunIdMateria[el.idMateria]}`}
+                      alt="Logo"
+                      width="24px"
+                      height="24px"
+                    />
+                  </span>
                 </li>
               </Link>
             ))
