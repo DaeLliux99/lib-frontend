@@ -47,7 +47,7 @@ const Header = () => {
                   <li>MIS ARTICULOS</li>{" "}
                 </Link>
               ) : (
-                <Link href="/">
+                <Link href="/favoritos">
                   <li>MIS FAVORITOS</li>
                 </Link>
               ))}
