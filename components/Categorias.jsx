@@ -57,8 +57,8 @@ const Categorias = () => {
           className={styles.subCategorias}
           style={{ display: `${mostrarItemNivel ? "block" : "none"}` }}
         >
-          <li>Primaria</li>
-          <li>Secundaria</li>
+          <li href={`?nivel=Primaria`}>Primaria</li>
+          <li href={`?nivel=Secundaria`}>Secundaria</li>
         </ul>
       </div>
       <div className={styles.item}>
