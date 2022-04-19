@@ -58,8 +58,14 @@ const PanelDocumento = ({ articulo }) => {
                 height="24px"
                 onClick={
                   esFavorito
-                    ? (() => {deleteFavorito(); setEsFavorito(null)})
-                    : (() => {addFavorito(); setEsFavorito({})})
+                    ? () => {
+                        deleteFavorito();
+                        setEsFavorito(null);
+                      }
+                    : () => {
+                        addFavorito();
+                        setEsFavorito({});
+                      }
                 }
               />
             </span>
@@ -79,7 +85,9 @@ const PanelDocumento = ({ articulo }) => {
             <div className={styles.seccionDescarga}>
               <p>Documentos</p>
               <div>
-                <button className={styles.boton}>Previsualizar</button>
+                <a target={"_blank"} href={articulo.enlace}>
+                  <button className={styles.boton}>Previsualizar</button>
+                </a>
                 <button className={styles.boton}>Descargar</button>
               </div>
             </div>
